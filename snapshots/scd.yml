@@ -1,0 +1,50 @@
+snapshots:
+  - name: scd_customers
+    relation: source('silver_source', 'customers_data')
+    config:
+      schema: gold_schema
+      database: databricks_pyspark_dbt_project_01
+      unique_key: customer_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date(9999-12-31)"
+
+  - name: scd_drivers
+    relation: source('silver_source', 'drivers_data')
+    config:
+      schema: gold_schema
+      database: databricks_pyspark_dbt_project_01
+      unique_key: driver_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date(9999-12-31)"
+  
+  - name: scd_locations
+    relation: source('silver_source', 'locations_data')
+    config:
+      schema: gold_schema
+      database: databricks_pyspark_dbt_project_01
+      unique_key: location_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date(9999-12-31)"
+
+  - name: scd_payments
+    relation: source('silver_source', 'payments_data')
+    config:
+      schema: gold_schema
+      database: databricks_pyspark_dbt_project_01
+      unique_key: payment_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date(9999-12-31)"
+
+  - name: scd_vehicles
+    relation: source('silver_source', 'vehicles_data')
+    config:
+      schema: gold_schema
+      database: databricks_pyspark_dbt_project_01
+      unique_key: vehicle_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date(9999-12-31)"

@@ -1,0 +1,18 @@
+sources:
+  - name: bronze_source
+    database: databricks_pyspark_dbt_project_01
+    schema: bronze_schema
+    tables:
+      - name: trips_data
+
+  - name: silver_source
+    database: databricks_pyspark_dbt_project_01
+    schema: silver_schema
+    tables:
+      - name: customers_data
+      - name: drivers_data
+      - name: locations_data
+      - name: payments_data
+      - name: vehicles_data 
+
+        
